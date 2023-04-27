@@ -7,7 +7,11 @@ defmodule Stubidity.MixProject do
       version: "0.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      description: "A plug that stubs popular foundation model APIs for development and testing purposes.",
+      package: package(),
+      deps: deps(),
+      name: "stubidity",
+      source_url: "https://github.com/fmops/stubidity"
     ]
   end
 
@@ -25,6 +29,15 @@ defmodule Stubidity.MixProject do
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
       {:plug, "~> 1.14"},
       {:jason, "~> 1.4"}
+    ]
+  end
+
+  defp package() do
+    [
+      files: ["lib", "mix.exs", "README*", "LICENSE*"],
+      maintainers: ["@joshnuss"],
+      licenses: ["Apache-2.0"],
+      links: %{"GitHub" => "https://github.com/fmops/stubidity"}
     ]
   end
 end
