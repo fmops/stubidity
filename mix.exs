@@ -7,7 +7,8 @@ defmodule Stubidity.MixProject do
       version: "0.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
-      description: "A plug that stubs popular foundation model APIs for development and testing purposes.",
+      description:
+        "A plug that stubs popular foundation model APIs for development and testing purposes.",
       package: package(),
       deps: deps(),
       name: "stubidity",
@@ -18,7 +19,7 @@ defmodule Stubidity.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger],
+      extra_applications: [:logger]
     ]
   end
 

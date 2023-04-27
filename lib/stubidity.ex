@@ -5,8 +5,8 @@ defmodule Stubidity do
   """
   use Plug.Router
 
-  plug :match
-  plug :dispatch
+  plug(:match)
+  plug(:dispatch)
 
   get "/hello" do
     conn |> send_resp(200, "world")
