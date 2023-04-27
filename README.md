@@ -1,6 +1,6 @@
 # Stubidity
 
-[![Build Status](https://github.com/fmops/stubidity/workflows/Elixir CI/badge.svg)](https://github.com/fmops/stubidity/actions/workflows/elixir.yml) [![Hex.pm](https://img.shields.io/hexpm/v/stubidity.svg)](https://hex.pm/packages/stubidity) [![Documentation](https://img.shields.io/badge/documentation-gray)](https://hexdocs.pm/stubidity)
+[![Build Status](https://github.com/fmops/stubidity/workflows/Elixir%20CI/badge.svg)](https://github.com/fmops/stubidity/actions/workflows/elixir.yml) [![Hex.pm](https://img.shields.io/hexpm/v/stubidity.svg)](https://hex.pm/packages/stubidity) [![Documentation](https://img.shields.io/badge/documentation-gray)](https://hexdocs.pm/stubidity)
 
 ## Getting started
 
