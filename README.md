@@ -2,6 +2,12 @@
 
 [![Build Status](https://github.com/fmops/stubidity/workflows/Elixir%20CI/badge.svg)](https://github.com/fmops/stubidity/actions/workflows/elixir.yml) [![Hex.pm](https://img.shields.io/hexpm/v/stubidity.svg)](https://hex.pm/packages/stubidity) [![Documentation](https://img.shields.io/badge/documentation-gray)](https://hexdocs.pm/stubidity)
 
+> Stupidity is doing the same thing over and over and expecting different results.
+
+Save money 💸; stop burning 🔥 tokens during dev/test.
+
+Save time ⏰; avoid [Heisenbugs](https://en.wikipedia.org/wiki/Heisenbug) 🥸 and flaky tests 🤞 deterministic API stub 🎯.
+
 ## Getting started
 
 The package can be installed by adding `stubidity` to your list of dependencies
