@@ -3,14 +3,6 @@ defmodule StubidityTest do
   use ExUnit.Case
   doctest Stubidity
 
-  test "greets the world" do
-    conn =
-      conn(:get, "/hello")
-      |> Stubidity.call(Stubidity.init([]))
-
-    assert conn.status == 200
-  end
-
   test "it requires an authorization header bearer token" do
     conn =
       conn(:post, "/openai/v1/chat/completions")

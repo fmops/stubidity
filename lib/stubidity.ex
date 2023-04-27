@@ -8,10 +8,6 @@ defmodule Stubidity do
   plug(:match)
   plug(:dispatch)
 
-  get "/hello" do
-    conn |> send_resp(200, "world")
-  end
-
   post "/openai/v1/chat/completions" do
     Stubidity.OpenAI.ChatCompletion.chat_completion(conn)
   end
