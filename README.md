@@ -31,7 +31,7 @@ end
 ## Client usage
 
 To use in your project, set your OpenAI base url to the path where Stubidity is running.
-You are welcome to use a public instance of Stubidity running at `https://fmops.ai/api/v1/stub/openai/v1`. For example:
+You are welcome to use a public instance of Stubidity at [`https://fmops.ai/api/v1/stub/openai/v1`](https://fmops.ai/api/v1/stub/openai/v1). For example:
 
 ```python
 import openai
