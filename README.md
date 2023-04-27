@@ -16,7 +16,7 @@ in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:stubidity, "~> 0.1.0"}
+    {:stubidity, "~> 0.2.0"}
   ]
 end
 ```
