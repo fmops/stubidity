@@ -120,4 +120,4 @@ data: [DONE]
 
 Copyright (c) 2023, Feynman Liang.
 
-Phoenix source code is licensed under the [Apache 2.0 License](LICENSE).
+Stubidity source code is licensed under the [Apache 2.0 License](LICENSE).
