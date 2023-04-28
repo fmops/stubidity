@@ -35,7 +35,7 @@ defmodule Stubidity.MixProject do
   defp package() do
     [
       files: ["lib", "mix.exs", "README*", "LICENSE*"],
-      maintainers: ["@joshnuss"],
+      maintainers: ["@feynmanliang"],
       licenses: ["Apache-2.0"],
       links: %{"GitHub" => "https://github.com/fmops/stubidity"}
     ]
