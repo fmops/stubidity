@@ -52,7 +52,6 @@ defmodule Stubidity.OpenAI.Embedding do
   end
 
   defp send_embedding(conn) do
-
     conn
     |> put_resp_content_type("application/json")
     |> send_resp(
@@ -60,7 +59,7 @@ defmodule Stubidity.OpenAI.Embedding do
       Jason.encode!(%{
         "data" => [
           %{
-            "embedding" => (for _ <- 1..1536, do: 0.0),
+            "embedding" => for(_ <- 1..1536, do: 0.0),
             "index" => 0,
             "object" => "embedding"
           }
