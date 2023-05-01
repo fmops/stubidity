@@ -21,6 +21,14 @@ defmodule Stubidity do
     Stubidity.OpenAI.Completion.call(conn)
   end
 
+  post "/v1/embeddings" do
+    Stubidity.OpenAI.Embedding.call(conn)
+  end
+
+  post "/v1/engines/:model" do
+    Stubidity.OpenAI.Embedding.call(conn)
+  end
+
   match _ do
     conn |> send_resp(404, "not found")
   end
