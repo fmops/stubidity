@@ -1,7 +1,7 @@
 defmodule Stubidity.OpenAI.ChatCompletion do
   import Plug.Conn
 
-  def chat_completion(conn) do
+  def call(conn) do
     case get_req_header(conn, "authorization") do
       [] ->
         send_unauthorized(conn)

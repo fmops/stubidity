@@ -14,7 +14,11 @@ defmodule Stubidity do
   plug(:dispatch)
 
   post "/v1/chat/completions" do
-    Stubidity.OpenAI.ChatCompletion.chat_completion(conn)
+    Stubidity.OpenAI.ChatCompletion.call(conn)
+  end
+
+  post "/v1/completions" do
+    Stubidity.OpenAI.Completion.call(conn)
   end
 
   match _ do
