@@ -4,7 +4,6 @@ defmodule StubidityTest do
   doctest Stubidity
 
   describe "/v1/chat/completions" do
-
     test "it requires an authorization header bearer token" do
       conn =
         conn(:post, "/v1/chat/completions")
@@ -58,11 +57,9 @@ defmodule StubidityTest do
 
       assert conn.status == 200
     end
-
   end
 
   describe "/v1/completions" do
-
     test "it requires an authorization header bearer token" do
       conn =
         conn(:post, "/v1/completions")
@@ -116,11 +113,9 @@ defmodule StubidityTest do
 
       assert conn.status == 200
     end
-
   end
 
   describe "/v1/embeddings" do
-
     test "it requires an authorization header bearer token" do
       conn =
         conn(:post, "/v1/embeddings")
@@ -158,6 +153,5 @@ defmodule StubidityTest do
       assert conn.status == 200
       assert String.length(conn.resp_body) > 10
     end
-
   end
 end

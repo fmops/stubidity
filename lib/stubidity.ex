@@ -5,12 +5,14 @@ defmodule Stubidity do
   """
   use Plug.Router
 
-
   plug(:match)
-  plug Plug.Parsers,
-        parsers: [:json],
-        pass:  ["application/json"],
-        json_decoder: Jason
+
+  plug(Plug.Parsers,
+    parsers: [:json],
+    pass: ["application/json"],
+    json_decoder: Jason
+  )
+
   plug(:dispatch)
 
   post "/v1/chat/completions" do
