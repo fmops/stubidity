@@ -5,7 +5,7 @@ defmodule StubidityTest do
 
   test "it requires an authorization header bearer token" do
     conn =
-      conn(:post, "/openai/v1/chat/completions")
+      conn(:post, "/v1/chat/completions")
       |> Stubidity.call(Stubidity.init([]))
 
     assert conn.status == 401
@@ -14,7 +14,7 @@ defmodule StubidityTest do
 
   test "it does not 401 when provided a bearer token" do
     conn =
-      conn(:post, "/openai/v1/chat/completions")
+      conn(:post, "/v1/chat/completions")
       |> put_req_header("authorization", "Bearer foo")
       |> Stubidity.call(Stubidity.init([]))
 
@@ -23,7 +23,7 @@ defmodule StubidityTest do
 
   test "it validates `model` body parameter" do
     conn =
-      conn(:post, "/openai/v1/chat/completions")
+      conn(:post, "/v1/chat/completions")
       |> put_req_header("authorization", "Bearer foo")
       |> Stubidity.call(Stubidity.init([]))
 
@@ -33,7 +33,7 @@ defmodule StubidityTest do
 
   test "it returns a valid chat completion" do
     conn =
-      conn(:post, "/openai/v1/chat/completions", %{"model" => "gpt-3.5-0301"})
+      conn(:post, "/v1/chat/completions", %{"model" => "gpt-3.5-0301"})
       |> put_req_header("authorization", "Bearer foo")
       |> Stubidity.call(Stubidity.init([]))
 
@@ -45,7 +45,7 @@ defmodule StubidityTest do
     conn =
       conn(
         :post,
-        "/openai/v1/chat/completions",
+        "/v1/chat/completions",
         %{
           "model" => "gpt-3.5-0301",
           "stream" => true

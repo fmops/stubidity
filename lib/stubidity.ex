@@ -5,10 +5,15 @@ defmodule Stubidity do
   """
   use Plug.Router
 
+
   plug(:match)
+  plug Plug.Parsers,
+        parsers: [:json],
+        pass:  ["application/json"],
+        json_decoder: Jason
   plug(:dispatch)
 
-  post "/openai/v1/chat/completions" do
+  post "/v1/chat/completions" do
     Stubidity.OpenAI.ChatCompletion.chat_completion(conn)
   end
 
