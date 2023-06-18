@@ -86,7 +86,7 @@ defmodule Stubidity.OpenAI.ChatCompletion do
   defp send_stream_completion(conn) do
     conn =
       conn
-      |> put_resp_header("Content-Type", "text/event-stream")
+      |> put_resp_header("content-type", "text/event-stream")
       |> send_chunked(200)
 
     [
