@@ -84,9 +84,10 @@ defmodule Stubidity.OpenAI.ChatCompletion do
   end
 
   defp send_stream_completion(conn) do
-    conn = conn
-    |> put_resp_header("Content-Type", "text/event-stream")
-    |> send_chunked(200)
+    conn =
+      conn
+      |> put_resp_header("Content-Type", "text/event-stream")
+      |> send_chunked(200)
 
     [
       "data: {\"id\":\"chatcmpl-6zwEy96ojYcDRcdNX8f4L9fu95CaJ\",\"object\":\"chat.completion.chunk\",\"created\":1680219904,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"role\":\"assistant\"},\"index\":0,\"finish_reason\":null}]}\n\ndata: {\"id\":\"chatcmpl-6zwEy96ojYcDRcdNX8f4L9fu95CaJ\",\"object\":\"chat.completion.chunk\",\"created\":1680219904,\"model\":\"gpt-3.5-turbo-0301\",\"choices\":[{\"delta\":{\"content\":\"Why\"},\"index\":0,\"finish_reason\":null}]}\n\n",
