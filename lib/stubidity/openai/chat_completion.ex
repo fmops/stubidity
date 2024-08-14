@@ -1,7 +1,6 @@
 defmodule Stubidity.OpenAI.ChatCompletion do
   import Plug.Conn
   use OpenApiSpex.ControllerSpecs
-  alias OpenApiSpex.Schema
 
   tags ["openai", "chat completions"]
 

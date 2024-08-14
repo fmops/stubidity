@@ -1,8 +1,45 @@
 defmodule Stubidity.OpenAI.Embedding do
   import Plug.Conn
+  use OpenApiSpex.ControllerSpecs
+
+  tags ["openai", "embedding"]
 
   def init(_opts), do: nil
 
+  operation :call,
+    summary: "Embedding",
+    parameters: [
+      %{
+        in: "header",
+        name: "authorization",
+        required: true,
+        schema: %{type: "string"}
+      },
+      %{
+        in: "body",
+        name: "model",
+        required: true,
+        schema: %{type: "string"}
+      },
+      %{
+        in: "body",
+        name: "stream",
+        required: false,
+        schema: %{type: "boolean"}
+      }
+    ],
+  request_body: {
+      "Embedding params",
+      "application/json",
+      StubidityWeb.Schemas.Embedding
+  },
+  responses: [
+      ok: {
+        "Embedding response",
+        "application/json",
+        StubidityWeb.Schemas.EmbeddingResponse
+      },
+    ]
   def call(conn, _opts) do
     case get_req_header(conn, "authorization") do
       [] ->
