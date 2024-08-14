@@ -9,18 +9,22 @@ defmodule StubidityWeb.Router do
       pass: ["application/json"],
       json_decoder: Jason
     )
+
+    plug OpenApiSpex.Plug.PutApiSpec, module: StubidityWeb.ApiSpec
   end
 
-  scope "/api", Stubidity do
+  scope "/api" do
     pipe_through :api
 
-    post "/v1/chat/completions", OpenAI.ChatCompletion, []
+    get "/openapi", OpenApiSpex.Plug.RenderSpec, []
 
-    post "/v1/completions", OpenAI.Completion, []
+    post "/v1/chat/completions", Stubidity.OpenAI.ChatCompletion, []
 
-    post "/v1/embeddings", OpenAI.Embedding, []
+    post "/v1/completions", Stubidity.OpenAI.Completion, []
 
-    post "/v1/engines/:model", OpenAI.Embedding, []
+    post "/v1/embeddings", Stubidity.OpenAI.Embedding, []
+
+    post "/v1/engines/:model", Stubidity.OpenAI.Embedding, []
   end
 
   # Enable LiveDashboard in development

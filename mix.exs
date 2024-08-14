@@ -44,7 +44,8 @@ defmodule Stubidity.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.20"},
       {:dns_cluster, "~> 0.1.1"},
-      {:bandit, "~> 1.5"}
+      {:bandit, "~> 1.5"},
+      {:open_api_spex, "~> 3.20"}
     ]
   end
 
