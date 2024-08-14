@@ -58,10 +58,9 @@ defmodule Stubidity.MixProject do
   defp aliases do
     [
       setup: ["deps.get"],
-      generate_openapi_spec: ["openapi.spec.json --spec StubidityWeb.ApiSpec"],
+      generate_openapi_spec: ["openapi.spec.json --spec StubidityWeb.ApiSpec"]
     ]
   end
-
 
   defp package() do
     [

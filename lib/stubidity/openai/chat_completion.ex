@@ -2,11 +2,11 @@ defmodule Stubidity.OpenAI.ChatCompletion do
   import Plug.Conn
   use OpenApiSpex.ControllerSpecs
 
-  tags ["openai", "chat completions"]
+  tags(["openai", "chat completions"])
 
   def init(_opts), do: nil
 
-  operation :call,
+  operation(:call,
     summary: "Chat completion",
     parameters: [
       %{
@@ -28,18 +28,20 @@ defmodule Stubidity.OpenAI.ChatCompletion do
         schema: %{type: "boolean"}
       }
     ],
-  request_body: {
+    request_body: {
       "Chat completion params",
       "application/json",
       StubidityWeb.Schemas.ChatCompletion
-  },
-  responses: [
+    },
+    responses: [
       ok: {
         "Chat completion response",
         "application/json",
         StubidityWeb.Schemas.ChatCompletionResponse
-      },
+      }
     ]
+  )
+
   def call(conn, _opts) do
     case get_req_header(conn, "authorization") do
       [] ->

@@ -4,7 +4,7 @@ defmodule StubidityWeb.Schemas do
   defmodule ChatCompletion do
     require OpenApiSpex
 
-    OpenApiSpex.schema( %{
+    OpenApiSpex.schema(%{
       title: "Chat completion",
       description: "A request to chat with the model.",
       type: :object,
@@ -12,7 +12,7 @@ defmodule StubidityWeb.Schemas do
         model: %Schema{type: "string"},
         stream: %Schema{type: "boolean"}
       },
-      required: ["model"],
+      required: ["model"]
     })
   end
 
@@ -27,7 +27,7 @@ defmodule StubidityWeb.Schemas do
   defmodule Completion do
     require OpenApiSpex
 
-    OpenApiSpex.schema( %{
+    OpenApiSpex.schema(%{
       title: "Completion",
       description: "A request to complete with the model.",
       type: :object,
@@ -35,7 +35,7 @@ defmodule StubidityWeb.Schemas do
         model: %Schema{type: "string"},
         stream: %Schema{type: "boolean"}
       },
-      required: ["model"],
+      required: ["model"]
     })
   end
 
@@ -50,7 +50,7 @@ defmodule StubidityWeb.Schemas do
   defmodule Embedding do
     require OpenApiSpex
 
-    OpenApiSpex.schema( %{
+    OpenApiSpex.schema(%{
       title: "Embedding ",
       description: "A request to embed with the model.",
       type: :object,
@@ -58,7 +58,7 @@ defmodule StubidityWeb.Schemas do
         model: %Schema{type: "string"},
         stream: %Schema{type: "boolean"}
       },
-      required: ["model"],
+      required: ["model"]
     })
   end
 
@@ -70,4 +70,3 @@ defmodule StubidityWeb.Schemas do
     })
   end
 end
-
