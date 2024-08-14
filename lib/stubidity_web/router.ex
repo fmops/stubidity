@@ -16,15 +16,15 @@ defmodule StubidityWeb.Router do
   scope "/api" do
     pipe_through :api
 
-    get "/openapi", OpenApiSpex.Plug.RenderSpec, []
+    get "/openapi", OpenApiSpex.Plug.RenderSpec, :call
 
-    post "/v1/chat/completions", Stubidity.OpenAI.ChatCompletion, []
+    post "/v1/chat/completions", Stubidity.OpenAI.ChatCompletion, :call
 
-    post "/v1/completions", Stubidity.OpenAI.Completion, []
+    post "/v1/completions", Stubidity.OpenAI.Completion, :call
 
-    post "/v1/embeddings", Stubidity.OpenAI.Embedding, []
+    post "/v1/embeddings", Stubidity.OpenAI.Embedding, :call
 
-    post "/v1/engines/:model", Stubidity.OpenAI.Embedding, []
+    post "/v1/engines/:model", Stubidity.OpenAI.Embedding, :call
   end
 
   # Enable LiveDashboard in development

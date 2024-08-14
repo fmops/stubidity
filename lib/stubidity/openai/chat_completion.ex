@@ -1,8 +1,46 @@
 defmodule Stubidity.OpenAI.ChatCompletion do
   import Plug.Conn
+  use OpenApiSpex.ControllerSpecs
+  alias OpenApiSpex.Schema
+
+  tags ["openai", "chat completions"]
 
   def init(_opts), do: nil
 
+  operation :call,
+    summary: "Chat completion",
+    parameters: [
+      %{
+        in: "header",
+        name: "authorization",
+        required: true,
+        schema: %{type: "string"}
+      },
+      %{
+        in: "body",
+        name: "model",
+        required: true,
+        schema: %{type: "string"}
+      },
+      %{
+        in: "body",
+        name: "stream",
+        required: false,
+        schema: %{type: "boolean"}
+      }
+    ],
+  request_body: {
+      "Chat completion params",
+      "application/json",
+      StubidityWeb.Schemas.ChatCompletion
+  },
+  responses: [
+      ok: {
+        "Chat completion response",
+        "application/json",
+        StubidityWeb.Schemas.ChatCompletionResponse
+      },
+    ]
   def call(conn, _opts) do
     case get_req_header(conn, "authorization") do
       [] ->
