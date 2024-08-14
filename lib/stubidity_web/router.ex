@@ -16,7 +16,6 @@ defmodule StubidityWeb.Router do
   scope "/" do
     get "/swaggerui", OpenApiSpex.Plug.SwaggerUI, path: "/api/openapi"
   end
-  
 
   scope "/api" do
     pipe_through :api

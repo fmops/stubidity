@@ -2,7 +2,7 @@ defmodule Stubidity.OpenAI.Completion do
   import Plug.Conn
   use OpenApiSpex.ControllerSpecs
 
-  tags(["openai", "chat completions"])
+  tags(["openai"])
 
   def init(_opts), do: nil
 

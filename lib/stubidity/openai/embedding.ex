@@ -2,7 +2,7 @@ defmodule Stubidity.OpenAI.Embedding do
   import Plug.Conn
   use OpenApiSpex.ControllerSpecs
 
-  tags(["openai", "embedding"])
+  tags(["openai"])
 
   def init(_opts), do: nil
 
