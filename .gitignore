@@ -24,3 +24,10 @@ stubidity-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+# direnv files
+.envrc
+.direnv/
+
+# openapi generated files
+openapi.json

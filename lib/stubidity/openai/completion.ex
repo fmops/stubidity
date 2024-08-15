@@ -1,7 +1,32 @@
 defmodule Stubidity.OpenAI.Completion do
   import Plug.Conn
+  use OpenApiSpex.ControllerSpecs
+
+  tags(["openai"])
+
+  def init(_opts), do: nil
+
+  operation(:call,
+    summary: "Completion",
+    request_body: {
+      "Completion params",
+      "application/json",
+      StubidityWeb.Schemas.Completion
+    },
+    responses: [
+      ok: {
+        "Completion response",
+        "application/json",
+        StubidityWeb.Schemas.CompletionResponse
+      }
+    ]
+  )
 
   def call(conn) do
+    call(conn, [])
+  end
+
+  def call(conn, _opts) do
     case get_req_header(conn, "authorization") do
       [] ->
         send_unauthorized(conn)

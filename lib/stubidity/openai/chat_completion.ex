@@ -1,7 +1,32 @@
 defmodule Stubidity.OpenAI.ChatCompletion do
   import Plug.Conn
+  use OpenApiSpex.ControllerSpecs
+
+  tags(["openai"])
+
+  def init(_opts), do: nil
+
+  operation(:call,
+    summary: "Chat completion",
+    request_body: {
+      "Chat completion params",
+      "application/json",
+      StubidityWeb.Schemas.ChatCompletion
+    },
+    responses: [
+      ok: {
+        "Chat completion response",
+        "application/json",
+        StubidityWeb.Schemas.ChatCompletionResponse
+      }
+    ]
+  )
 
   def call(conn) do
+    call(conn, [])
+  end
+
+  def call(conn, _opts) do
     case get_req_header(conn, "authorization") do
       [] ->
         send_unauthorized(conn)
