@@ -8,26 +8,6 @@ defmodule Stubidity.OpenAI.ChatCompletion do
 
   operation(:call,
     summary: "Chat completion",
-    parameters: [
-      %{
-        in: "header",
-        name: "authorization",
-        required: true,
-        schema: %{type: "string"}
-      },
-      %{
-        in: "body",
-        name: "model",
-        required: true,
-        schema: %{type: "string"}
-      },
-      %{
-        in: "body",
-        name: "stream",
-        required: false,
-        schema: %{type: "boolean"}
-      }
-    ],
     request_body: {
       "Chat completion params",
       "application/json",
