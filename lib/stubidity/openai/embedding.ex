@@ -22,6 +22,8 @@ defmodule Stubidity.OpenAI.Embedding do
     ]
   )
 
+  def call(conn), do: call(conn, [])
+
   def call(conn, _opts) do
     case get_req_header(conn, "authorization") do
       [] ->

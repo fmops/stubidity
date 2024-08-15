@@ -22,6 +22,11 @@ defmodule Stubidity.OpenAI.Completion do
     ]
   )
 
+  def call(conn) do
+    call(conn, [])
+  end
+  
+
   def call(conn, _opts) do
     case get_req_header(conn, "authorization") do
       [] ->

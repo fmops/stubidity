@@ -3,6 +3,8 @@ defmodule Stubidity.AzureOpenAI.ChatCompletion do
 
   def init(_opts), do: nil
 
+  def call(conn), do: call(conn, [])
+
   def call(conn, _opts) do
     case get_req_header(conn, "api-key") do
       [] ->
