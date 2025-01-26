@@ -1,4 +1,5 @@
 defmodule Stubidity.OpenAI.ChatCompletion do
+  require Logger
   import Plug.Conn
   use OpenApiSpex.ControllerSpecs
 
@@ -136,7 +137,8 @@ defmodule Stubidity.OpenAI.ChatCompletion do
         {:ok, conn} ->
           {:cont, conn}
 
-        {:error, _reason, conn} ->
+        {:error, reason} ->
+          Logger.error("Error chunking response: #{inspect(reason)}")
           {:halt, conn}
       end
     end)

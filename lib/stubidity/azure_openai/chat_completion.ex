@@ -1,4 +1,5 @@
 defmodule Stubidity.AzureOpenAI.ChatCompletion do
+  require Logger
   import Plug.Conn
 
   def init(_opts), do: nil
@@ -110,7 +111,8 @@ defmodule Stubidity.AzureOpenAI.ChatCompletion do
         {:ok, conn} ->
           {:cont, conn}
 
-        {:error, _reason, conn} ->
+        {:error, reason} ->
+          Logger.error("Error chunking response: #{inspect(reason)}")
           {:halt, conn}
       end
     end)
