@@ -1,4 +1,5 @@
 defmodule Stubidity.OpenAI.Completion do
+  require Logger
   import Plug.Conn
   use OpenApiSpex.ControllerSpecs
 
@@ -123,7 +124,8 @@ defmodule Stubidity.OpenAI.Completion do
         {:ok, conn} ->
           {:cont, conn}
 
-        {:error, _reason, conn} ->
+        {:error, reason} ->
+          Logger.error("Error chunking response: #{inspect(reason)}")
           {:halt, conn}
       end
     end)
